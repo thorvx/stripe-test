@@ -169,7 +169,7 @@ export class AppComponent implements OnDestroy, AfterViewInit {
     initStripeForm() {
       // Giving a base style here, but most of the style is in scss file
       const options = {
-        clientSecret: 'seti_1NPsGSHQcuvUR32siQdirqxe_secret_OCGooKSg5b4LbzLNIWctwLrl7zZfgZT',
+        clientSecret: 'pi_3NT5Z5HQcuvUR32s1BEdBNcX_secret_Lbm4ECKq2lLNI4Xs65YkZiZQq',
         // Fully customizable with appearance API.
         appearance: {
           theme: 'flat'
@@ -193,6 +193,25 @@ export class AppComponent implements OnDestroy, AfterViewInit {
         //confirmParams: {
         //  return_url: 'https://example.com',
         //},
+      })
+      .then(function(result: any) {
+        console.log(result);
+        if (result.error) {
+          self.cardError = result.error.message;
+        }
+      });
+
+    }
+
+    payStripe() {
+      const self = this;
+      stripe.confirmPayment({
+        elements: this.paymentElements,
+        redirect: 'if_required',
+        confirmParams: {
+          //return_url: 'https://example.com',
+          receipt_email: 'diego.olguin@nuevatel.com',
+        },
       })
       .then(function(result: any) {
         console.log(result);
