@@ -169,7 +169,7 @@ export class AppComponent implements OnDestroy, AfterViewInit {
     initStripeForm() {
       // Giving a base style here, but most of the style is in scss file
       const options = {
-        clientSecret: 'pi_3NT5Z5HQcuvUR32s1BEdBNcX_secret_Lbm4ECKq2lLNI4Xs65YkZiZQq',
+        clientSecret: 'pi_3NVd75HQcuvUR32s1vtWz40k_secret_0N8amSSiZ4RiDD41X684n9jeG',
         // Fully customizable with appearance API.
         appearance: {
           theme: 'flat'
@@ -225,7 +225,7 @@ export class AppComponent implements OnDestroy, AfterViewInit {
     async createStripeVoucher() {
 
       const result = await stripe.confirmOxxoPayment(
-        'pi_3NVcMNHQcuvUR32s07xXEfVu_secret_8blymNi3Xsb6WceBtWDWSaCtS',
+        'pi_3NVfecFj1i1jApMN0ANjt9cI_secret_32a9WOEJ8AQLioYTC4Dyj0X5e',
         {
           payment_method: {
             billing_details: {
