@@ -58,4 +58,29 @@
 
 
 
+<h1>Stripe voucher</h1>
+
+<form id="payment-form" (ngSubmit)="createStripeVoucher()">
+  <div class="form-row">
+    <label for="name">
+      Name
+    </label>
+    <input id="name" name="name" required>
+  </div>
+
+  <div class="form-row">
+    <label for="email">
+      Email
+    </label>
+    <input id="email" name="email" required>
+  </div>
+
+  <!-- Used to display form errors. -->
+  <div id="error-message" role="alert"></div>
+
+  <button id="submit-button" type="submit">Pay with OXXO</button>
+</form>
+
+
+
 <router-outlet></router-outlet>

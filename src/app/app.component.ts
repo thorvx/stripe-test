@@ -222,6 +222,23 @@ export class AppComponent implements OnDestroy, AfterViewInit {
 
     }
 
+    async createStripeVoucher() {
+
+      const result = await stripe.confirmOxxoPayment(
+        'pi_3NVcMNHQcuvUR32s07xXEfVu_secret_8blymNi3Xsb6WceBtWDWSaCtS',
+        {
+          payment_method: {
+            billing_details: {
+              name: "Diego Olguin",
+              email: "diego.olguin@nuevatel.com",
+            },
+          },
+        });
+
+        console.log(result);
+
+    }
+
 }
 
 
